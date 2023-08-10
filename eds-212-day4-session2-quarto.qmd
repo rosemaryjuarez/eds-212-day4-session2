@@ -4,4 +4,17 @@ format: html
 editor: visual
 ---
 
-## brooo
+## 
+
+```{r}
+library(GGally)
+library(skimr)
+library(palmerpenguins)
+library(tidyverse)
+```
+
+## Basic Data Exploration
+
+```{r}
+View(penguins)
+```
