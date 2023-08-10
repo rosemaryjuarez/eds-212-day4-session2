@@ -2,6 +2,8 @@
 title: "meds-212-day4-session2-q"
 format: html
 editor: visual
+execute: 
+  warning: false
 ---
 
 ## 
@@ -17,4 +19,45 @@ library(tidyverse)
 
 ```{r}
 View(penguins)
+```
+
+names: get variable names
+
+dim: get data dimensions
+
+head: get first n lines(6 by default)
+
+tail:
+
+summary: get basic summary statistics
+
+```{r}
+names(penguins)
+dim(penguins)
+head(penguins)
+tail(penguins)
+summary(penguins)
+```
+
+```{r}
+skim(penguins)
+```
+
+## dont just do summary statistics, lets check pairwise 
+
+```{r}
+ggpairs(penguins)
+```
+
+histogram
+
+```{r}
+ggplot(data = penguins, aes(x = flipper_length_mm)) +
+  geom_histogram(aes(fill = species)) + theme_minimal() 
+```
+
+```{r}
+ggplot(data = penguins, aes(x = species, y = bill_length_mm)) +
+  geom_boxplot(fill = 'yellow', aes(color = island)) +
+  geom_jitter(color = 'magenta', alpha = 0.5, aes(size = bill_depth_mm)) + theme_linedraw()
 ```
